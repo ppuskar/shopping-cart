@@ -1,0 +1,28 @@
+
+.card-title {
+  font-weight: bold;
+}
+.card-body .description {
+  color: #7f7f7f7f;
+}
+
+.price{
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.checkout-inlineimage {
+  max-width: 470px;
+  margin-right: 8px;
+  margin-left: 10px
+}
+
+.checkout-images {
+  display: inline-block;
+  max-width: 95%;
+  height: auto;
+  width: 20%;
+  margin: 1%;
+  left: 20px;
+  text-align: center
+}

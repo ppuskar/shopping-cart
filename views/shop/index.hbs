@@ -1,0 +1,17 @@
+<div class="row row-cols-1 row-cols-md-3">
+  {{# each  products}}
+  <div class="col md-4 p-3">
+    <div class="card">
+      <img src="{{ this.imagepath }}" class="card-img-top" alt="..." class="image-responsive">
+      <div class="card-body">
+        <h5 class="card-title">{{ title }}</h5>
+        <p class="card-text description">{{ description }}</p>
+        <div>
+          <div class="price float-left">{{ price }}$</div>
+          <a class="btn btn-outline-success float-right" href="/add-to-cart/{{this._id}}" role="button">Add to cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>

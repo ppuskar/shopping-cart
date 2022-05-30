@@ -1,0 +1,81 @@
+{{# if products}}
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h1>Shopping cart</h1>
+        <!-- Shopping cart table -->
+        <div class="table-responsive card">
+            <table class="table">
+                <thead>
+                    <tr class="card-header">
+                        <th scope="col" class="border-0 bg-light">
+                            <div class="p-2 px-3 text-uppercase">Product</div>
+                        </th>
+                        <th scope="col" class="border-0 bg-light">
+                            <div class="py-2 text-uppercase">Quantity</div>
+                        </th>
+                        <th scope="col" class="border-0 bg-light">
+                            <div class="py-2 text-uppercase">Remove</div>
+                        </th>
+                        <th scope="col" class="border-0 bg-light">
+                            <div class="py-2 text-uppercase">Price</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {{#each products}}
+                    <tr>
+                        <th scope="row" class="border-0">
+                            <div class="p-2">
+
+                                <div class="ml-3 d-inline-block align-middle">
+                                    <h5 class="mb-0"> <a href="#"
+                                            class="text-dark d-inline-block align-middle">{{this.item.title}}</a></h5>
+                                    <span class="text-muted font-weight-normal font-italic d-block">Category:
+                                        Battery</span>
+                                </div>
+                            </div>
+                        </th>
+                        <td class="border-0 align-middle"><strong>{{this.qty}}</strong></td>
+                        <td class="border-0 align-middle">
+                            <div class="btn-group dropdown">
+                                <button class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown"
+                                    type="button">Action</button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Reduce by 1</a>
+                                    <a class="dropdown-item" href="#">Remove All</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="border-0 align-middle"><strong>${{this.price}}</strong></td>
+                    </tr>
+
+
+                    {{/each}}
+                    <tr>
+                        <td colspan="2"></td>
+                        <td class=" text-right"><strong>Total: </strong></td>
+                        <td class=" text-left"><strong>${{totalPrice}}</strong></td>
+                    </tr>
+                    <tr class="">
+                        <td colspan="2" align="left"><a href="/" type="button" class="btn btn-secondary">
+                                Continue shopping</a></td>
+                        <td colspan="2" align="right"><a href="/checkout" type="button" class="btn btn-success">
+                                Checkout</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- End -->
+
+
+    </div>
+</div>
+{{else}}
+
+<div class="row">
+    <div class="col-sm-6 col-md-6 col-md-offset-3 offset-sm-3">
+        <h2>No Items in Cart</h2>
+    </div>
+</div>
+{{/if}}
